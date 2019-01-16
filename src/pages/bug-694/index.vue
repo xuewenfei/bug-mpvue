@@ -39,6 +39,7 @@ export default {
   },
   onLoad (options) {
     console.log('pages/bug-694 onLoad options', options)
+    console.log('pages/bug-694 onLoad $options.data()', this.$options.data())
     console.log('pages/bug-694 onLoad data', this.$data)
     console.log('pages/bug-694 onLoad params', this.params)
     let params = options.params

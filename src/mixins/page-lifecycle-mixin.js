@@ -3,6 +3,11 @@ let endTime
 let transactionId = '00000000000'
 let userid
 export default {
+  onLaunch () {
+    if (this.$mp && this.$mp.page) {
+      console.debug(`[page-lifecycle-mixin] ${this.$mp.page.route} onLaunch`)
+    }
+  },
   onLoad () {
     if (this.$mp && this.$mp.page) {
       console.debug(`[page-lifecycle-mixin] ${this.$mp.page.route} onLoad`)
@@ -48,6 +53,16 @@ export default {
   mounted () {
     if (this.$mp && this.$mp.page) {
       console.debug(`[page-lifecycle-mixin] ${this.$mp.page.route} mounted`)
+    }
+  },
+  beforeDestroy () {
+    if (this.$mp && this.$mp.page) {
+      console.debug(`[page-lifecycle-mixin] ${this.$mp.page.route} beforeDestroy`)
+    }
+  },
+  destroyed () {
+    if (this.$mp && this.$mp.page) {
+      console.debug(`[page-lifecycle-mixin] ${this.$mp.page.route} destroyed`)
     }
   },
 }
